@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&family=Staatliches&display=swap');
+
+body{
+	background: rgb(63,121,251);
+	background: radial-gradient(circle, rgba(63,121,251,1) 0%, rgba(255,152,137,1) 100%);
+
+}
+
+h1{
+	font-weight: bold;
+	font-family: 'Noto Sans JP', sans-serif;
+	letter-spacing: 2px;
+
+}
+
+h2{
+	font-family: 'Staatliches', cursive;
+	margin-bottom:-10px;
+}
+
+form{
+	font-family: 'Staatliches', cursive, Arial;
+	
+}
+
+table{
+	background-color:rgba(255,0,0,0.2);
+	text-align: center;
+	border-collapse: collapse;
+
+}
+
+th{
+	background-color: rgba(0,0,0,0.2);
+	font-family: 'Noto Sans JP', sans-serif;
+	letter-spacing:2px;
+	font-weight: bold;
+	font-size:20px;
+	padding:10px;
+	border-right:2px solid rgba(255,255,255,0.5);
+	color:white;
+
+
+}
+td{
+	padding:10px;
+	font-family: 'Staatliches', cursive;
+}
+tr{
+	border-bottom:2px solid black;
+}
+#update{
+	width:300px;
+	height:300px;
+	background-color:rgba(255,255,255,0.2);
+	border-radius:20px;
+
+}
+input{
+	margin:10px;
+}

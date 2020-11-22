@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Netflix Schedule</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link th:href="@{/styles/main.css}" rel="stylesheet" />
+    
+</head>
+<body>
+
+<center>
+
+<h1>NETFLIX SCHEDULE</h1>
+
+<table>
+
+    <tr>
+        <th>Show</th>
+        <th>Time</th>
+        <th>Description</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+
+    <tr th:each="appt : ${apptList}">
+        <td th:text="${appt.showName}">name</td>
+        <td th:text="${appt.showTime}">time</td>
+        <td th:text="${appt.showInfo}">description</td>
+        <td onclick="editFocus()"> <a th:href="@{/editAppointment/}+${appt.id}">Edit</a></td>
+        <td> <a th:href="@{/deleteAppointment/}+${appt.id}">Delete</a></td> 
+      
+    </tr>
+
+</table>
+<br>
+<div id="update">
+<h2>Add/Edit Show</h2>
+<form method="post" action="" th:action="@{/insertAppointment}" th:object="${ShowAppt}">
+    <input type="hidden" name="id" th:field="*{id}"/><br>
+    Show Name: <br>
+    <input type="text" name="showName" th:field="*{showName}" required>
+    <br>
+    Show Time:
+    <input type="datetime-local" name="showTime" th:field="*{showTime}" required><br>
+    Description: 
+    <br>
+    <input type="text" name="showInfo" th:field="*{showInfo}" required>
+    <br>
+    <input type="submit" value="Add Show">
+
+</form>
+</div>
+
+<script type="text/javascript">
+    function editFocus(){
+        document.getElementsByName("showName")[0].focus();
+        document.getElementsByName("showName")[0].select();
+    }
+</script>
+
+</center>
+
+</body>
+</html>
